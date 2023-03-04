@@ -62,10 +62,14 @@ public class MainActivity extends AppCompatActivity {
         btn_c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation=operation.substring(0,operation.length()-1);
-                tv_input.setText(operation);
-                flag=true;
 
+                if (operation.equals("")) {
+                    Toast.makeText(MainActivity.this, "Try again", Toast.LENGTH_SHORT).show();
+                }else {
+                    operation = operation.substring(0, operation.length() - 1);
+                    tv_input.setText(operation);
+                    flag = true;
+                }
             }
         });
 
